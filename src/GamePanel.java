@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements Runnable {
     // clásicas), pero los dibujamos escalados x3 para verlos bien hoy.
     // ------------------------------------------------------------------
     public static final int TILE_BASE = 16;                       // tamaño "real" del sprite
-    public static final int ESCALA = 3;                           // factor de ampliación
+    public static final int ESCALA = 4;                           // factor de ampliación
     public static final int TAMANO_TILE = TILE_BASE * ESCALA;     // 48 px en pantalla
     public static final int MAX_COLUMNAS = 16;                    // tiles a lo ancho
     public static final int MAX_FILAS = 12;                       // tiles a lo alto
