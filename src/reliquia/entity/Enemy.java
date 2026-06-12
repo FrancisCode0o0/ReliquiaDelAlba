@@ -1,3 +1,7 @@
+package reliquia.entity;
+import reliquia.core.GamePanel;
+import reliquia.object.GameObject;
+
 /**
  * CLASE ENEMY — Enemigos con patrones simples.
  *

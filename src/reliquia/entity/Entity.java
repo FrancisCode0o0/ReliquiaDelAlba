@@ -1,6 +1,9 @@
+package reliquia.entity;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+
+import reliquia.core.GamePanel;
 
 /**
  * CLASE ENTITY — Madre de todo ser viviente del juego.

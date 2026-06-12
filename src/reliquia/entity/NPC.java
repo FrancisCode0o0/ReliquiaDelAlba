@@ -1,3 +1,6 @@
+package reliquia.entity;
+import reliquia.core.GamePanel;
+
 /**
  * CLASE NPC — Personajes no jugables.
  *

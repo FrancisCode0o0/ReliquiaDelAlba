@@ -1,5 +1,9 @@
+package reliquia.world;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+
+import reliquia.core.GamePanel;
+import reliquia.entity.Player;
 
 /**
  * CLASE GAMEMAP — El mundo: 5 pantallas hechas de tiles.

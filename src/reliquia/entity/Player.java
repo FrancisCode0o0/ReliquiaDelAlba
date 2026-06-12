@@ -1,6 +1,11 @@
+package reliquia.entity;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import reliquia.core.GamePanel;
+import reliquia.core.KeyHandler;
+import reliquia.object.Inventory;
 
 /**
  * CLASE PLAYER — El héroe.

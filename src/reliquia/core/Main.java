@@ -1,3 +1,4 @@
+package reliquia.core;
 import javax.swing.JFrame;
 
 /**

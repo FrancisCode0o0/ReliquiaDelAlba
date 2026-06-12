@@ -1,4 +1,8 @@
+package reliquia.object;
 import java.awt.Graphics2D;
+
+import reliquia.core.GamePanel;
+import reliquia.ui.UI;
 
 /**
  * CLASE GAMEOBJECT — Todo lo que puebla el escenario sin estar vivo.

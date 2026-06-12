@@ -1,5 +1,9 @@
+package reliquia.core;
 import java.awt.Rectangle;
 import java.util.ArrayList;
+
+import reliquia.entity.Entity;
+import reliquia.object.GameObject;
 
 /**
  * CLASE COLLISIONCHECKER — La detección de colisiones.

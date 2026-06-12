@@ -1,5 +1,8 @@
+package reliquia.entity;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+
+import reliquia.core.GamePanel;
 
 /**
  * CLASE BOSS — La Bestia, jefe final.

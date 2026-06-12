@@ -1,4 +1,7 @@
+package reliquia.object;
 import java.util.ArrayList;
+
+import reliquia.entity.Player;
 
 /**
  * CLASE INVENTORY — El inventario del héroe.

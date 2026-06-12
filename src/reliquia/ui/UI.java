@@ -1,7 +1,11 @@
+package reliquia.ui;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+
+import reliquia.core.GamePanel;
+import reliquia.object.Inventory;
 
 /**
  * CLASE UI — Todo lo que se dibuja ENCIMA del mundo.
