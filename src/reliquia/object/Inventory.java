@@ -85,9 +85,12 @@ public class Inventory {
             if (jugador.vida < jugador.vidaMaxima) {
                 jugador.vida = Math.min(jugador.vida + 4, jugador.vidaMaxima);
                 quitarUno("Poción");
-                jugador.gp.ui.mostrarMensaje("Bebes la poción. ¡Salud restaurada!");
+                
+                // MODIFICACIÓN: Llama al método intermediario que pusiste en Player
+                jugador.mostrarMensajeEnHUD("Bebes la poción. ¡Salud restaurada!");
             } else {
-                jugador.gp.ui.mostrarMensaje("Tu salud ya está completa.");
+                // MODIFICACIÓN: Llama al método intermediario que pusiste en Player
+                jugador.mostrarMensajeEnHUD("Tu salud ya está completa.");
             }
         }
     }

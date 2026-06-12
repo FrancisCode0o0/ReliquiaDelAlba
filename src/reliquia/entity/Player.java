@@ -1,10 +1,11 @@
 package reliquia.entity;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
-
 import reliquia.core.GamePanel;
 import reliquia.core.KeyHandler;
+import reliquia.object.GameObject;
 import reliquia.object.Inventory;
 
 /**
@@ -384,6 +385,17 @@ public class Player extends Entity {
         gp.ui.mostrarMensaje("Has soltado: " + nombreObjeto);
     	
     	
+    }
+    
+ // ==================================================================
+    // MÉTODO DELEGADO PARA EL HUD
+    // ==================================================================
+    /**
+     * Intermediario público para que clases externas manden texto a la UI
+     * sin tener que acceder directamente al atributo protegido 'gp'.
+     */
+    public void mostrarMensajeEnHUD(String texto) {
+        this.gp.ui.mostrarMensaje(texto);
     }
     
     

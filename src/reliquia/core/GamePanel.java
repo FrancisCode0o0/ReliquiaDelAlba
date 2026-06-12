@@ -1,11 +1,20 @@
 package reliquia.core;
-import javax.swing.JPanel;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.util.ArrayList;
+import javax.swing.JPanel;
+import reliquia.data.SaveManager;
+import reliquia.entity.Boss; // <-- Línea añadida para reconocer al jefe final
+import reliquia.entity.Enemy;
+import reliquia.entity.NPC;
+import reliquia.entity.Player;
+import reliquia.object.GameObject;
+import reliquia.ui.UI;
+import reliquia.world.GameMap;
 
 /**
  * CLASE GAMEPANEL — El corazón del juego.
