@@ -31,6 +31,8 @@ public class GameObject {
     public static final int LLAVE = 6;
     public static final int POCION = 7;
     public static final int RELIQUIA = 8;
+    public static final int ESPADA = 9;
+    
 
     GamePanel gp;
     public String id;
@@ -56,7 +58,7 @@ public class GameObject {
         y = fila * GamePanel.TAMANO_TILE;
 
         switch (tipo) {
-            case MONEDA: case CORAZON: case LLAVE: case POCION: case RELIQUIA:
+            case MONEDA: case CORAZON: case LLAVE: case POCION: case RELIQUIA: case ESPADA:
                 recogible = true;   // se obtienen por contacto
                 break;
             default:
@@ -79,6 +81,7 @@ public class GameObject {
             case LLAVE:    dibujarLlave(g2);    break;
             case POCION:   dibujarPocion(g2);   break;
             case RELIQUIA: dibujarReliquia(g2); break;
+            case ESPADA:   dibujarMoneda(g2);   break;
         }
     }
 

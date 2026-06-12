@@ -33,6 +33,7 @@ public class KeyHandler implements KeyListener {
     // Banderas de un solo uso (las consume Player).
     public boolean accion;   // ENTER: hablar / abrir / confirmar
     public boolean ataque;   // ESPACIO: golpe de espada
+    public boolean soltar;
 
     public KeyHandler(GamePanel gp) {
         this.gp = gp;
@@ -103,6 +104,7 @@ public class KeyHandler implements KeyListener {
 
         if (codigo == KeyEvent.VK_SPACE) ataque = true;
         if (codigo == KeyEvent.VK_ENTER) accion = true;
+        if (codigo == KeyEvent.VK_Q) soltar = true;
 
         if (codigo == KeyEvent.VK_I) {
             gp.estado = GamePanel.ESTADO_INVENTARIO;

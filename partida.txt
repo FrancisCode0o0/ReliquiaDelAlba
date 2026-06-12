@@ -1,0 +1,8 @@
+pantalla=2
+x=333
+y=15
+vida=6
+vidaMaxima=6
+monedas=3
+inventario=Espada:1,Poción:1
+recogidos=cofre_aldea,moneda_b1,cofre_bosque,moneda_b2,moneda_lago,botin_0,corazon_lago,puerta_mazmorra

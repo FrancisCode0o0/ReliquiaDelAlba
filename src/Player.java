@@ -81,6 +81,13 @@ public class Player extends Entity {
                 teclado.accion = false;
                 interactuar();
             }
+            //Detención para soltar espada
+            if (teclado.soltar) {
+            	teclado.soltar = false;
+            	if (inventario.tiene("Espada")) {
+            		tirarObjeto("Espada");
+            	}
+            }
         }
 
         revisarDanioDeEnemigos();
@@ -97,6 +104,10 @@ public class Player extends Entity {
      *  1) elegir dirección  2) preguntar a CollisionChecker
      *  3) moverse SOLO si nada lo impide. */
     private void actualizarMovimiento() {
+    	
+    	//Control dinámico de velocidad según el inventario.
+    	if (!inventario.tiene("Espada")) velocidad = 6; //El doble de la velocidad actual (3 * 2)
+    	else velocidad = 3; //velocidad base
 
         boolean moviendose = teclado.arriba || teclado.abajo
                 || teclado.izquierda || teclado.derecha;
@@ -266,8 +277,12 @@ public class Player extends Entity {
                 break;
             case GameObject.RELIQUIA:
                 inventario.agregar("Reliquia");
-                gp.estado = GamePanel.ESTADO_VICTORIA;  // ¡fin del juego!
+                gp.estado = GamePanel.ESTADO_VICTORIA;  // ¡Fin del juego! (Solo para la reliquia).
                 break;
+            case GameObject.ESPADA:
+            	inventario.agregar("Espada");
+            	gp.ui.mostrarMensaje("¡Has recuperado tu espada!");
+            	break;
             default:
                 return;  // no era recogible
         }
@@ -339,7 +354,34 @@ public class Player extends Entity {
         g2.drawRect(hojaX, hojaY, hojaAncho, hojaAlto);
         g2.drawRect(guardaX, guardaY, guardaAncho, guardaAlto);
     }
-
+    
+    //---------------------------------------------------------------
+   /**Remueve el objeto del inventario y lo instancia en el mapa
+    * en la posición actual del jugador como un elemento recogible.*/
+    //---------------------------------------------------------------
+    private void tirarObjeto(String nombreObjeto) {
+    	//1.Quita el item del inventario.
+    	inventario.quitarUno(nombreObjeto);
+    	
+    	//2. Calculamos la columna y la fila en base a los píxeles actuales del jugador.
+    	int columna = x	/ GamePanel.TAMANO_TILE;
+    	int fila = y	/ GamePanel.TAMANO_TILE;
+    	
+    	//Generamos un ID único usando el tiempo del sistema para evitar colisiones.
+        String idUnico = "espada_suelo_" + System.currentTimeMillis();
+    	
+        //3. Crea la identidad física utilizando el constructor parametrizado.
+        GameObject objetoTirado = new GameObject(gp, idUnico, GameObject.ESPADA, columna, fila, pantalla);
+    	
+        //4.Lo inyectamos en la lista global del panel para que el bucle lo renderice
+        gp.objetos.add(objetoTirado);
+        
+        gp.ui.mostrarMensaje("Has soltado: " + nombreObjeto);
+    	
+    	
+    }
+    
+    
     // ------------------------------------------------------------------
     // SPRITES DEL HÉROE (matrices de 16x16 caracteres)
     // Solo dibujamos tres: abajo, arriba y derecha. El de la izquierda
