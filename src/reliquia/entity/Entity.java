@@ -31,6 +31,10 @@ import reliquia.core.GamePanel;
  */
 public class Entity {
 
+	// MODIFICADOR PROTECTED RECONSTITUIDO:
+    // Restringe el acceso directo a GamePanel. Solo es visible para la propia clase Entity,
+    // las clases del paquete 'reliquia.entity' y cualquier clase hija (como Player, Enemy, NPC).
+    // Evita que componentes de otros paquetes (como Inventory) rompan el encapsulamiento.
     protected GamePanel gp;
 
     public int x, y;                    // posición en píxeles dentro de la pantalla

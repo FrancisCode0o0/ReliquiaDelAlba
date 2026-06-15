@@ -39,7 +39,7 @@ public class GamePanel extends JPanel implements Runnable {
     // ------------------------------------------------------------------
     // MEDIDAS DE LA PANTALLA
     // Los sprites originales miden 16x16 píxeles (como en las consolas
-    // clásicas), pero los dibujamos escalados x3 para verlos bien hoy.
+    // clásicas), pero los dibujamos escalados x4 para verlos bien hoy.
     // ------------------------------------------------------------------
     public static final int TILE_BASE = 16;                       // tamaño "real" del sprite
     public static final int ESCALA = 4;                           // factor de ampliación
