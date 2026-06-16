@@ -43,7 +43,7 @@ public class Enemy extends Entity {
                 cargarSpritesBabosa();
                 break;
             case MURCIELAGO:
-                velocidad = 2;
+                velocidad = 3;
                 vidaMaxima = 1; vida = 1;     // frágil pero rápido
                 cargarSpritesMurcielago();
                 break;

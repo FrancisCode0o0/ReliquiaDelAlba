@@ -112,7 +112,12 @@ public class Player extends Entity {
     private void actualizarMovimiento() {
     	
     	//Control dinámico de velocidad según el inventario.
-    	if (!inventario.tiene("Espada")) velocidad = 6; //El doble de la velocidad actual (3 * 2)
+    	if (teclado.posturaFirme) { 
+    		velocidad = 0;
+    		return;
+    	}
+    	
+    	else if (!inventario.tiene("Espada")) velocidad = 6; //El doble de la velocidad actual (3 * 2)
     	else velocidad = 3; //velocidad base
 
         boolean moviendose = teclado.arriba || teclado.abajo

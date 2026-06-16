@@ -30,11 +30,14 @@ public class KeyHandler implements KeyListener {
 
     // Banderas de movimiento (continuas).
     public boolean arriba, abajo, izquierda, derecha;
-
+    public boolean posturaFirme; /**Mientras se pulsa, no se mueve, 
+    * aunque se precionen las de movimiento */
+    
     // Banderas de un solo uso (las consume Player).
     public boolean accion;   // ENTER: hablar / abrir / confirmar
     public boolean ataque;   // ESPACIO: golpe de espada
     public boolean soltar;
+    
 
     public KeyHandler(GamePanel gp) {
         this.gp = gp;
@@ -103,6 +106,7 @@ public class KeyHandler implements KeyListener {
         if (codigo == KeyEvent.VK_LEFT  || codigo == KeyEvent.VK_A) izquierda = true;
         if (codigo == KeyEvent.VK_RIGHT || codigo == KeyEvent.VK_D) derecha = true;
 
+        if (codigo == KeyEvent.VK_X) posturaFirme = true;
         if (codigo == KeyEvent.VK_SPACE) ataque = true;
         if (codigo == KeyEvent.VK_ENTER) accion = true;
         if (codigo == KeyEvent.VK_Q) soltar = true;
@@ -142,5 +146,8 @@ public class KeyHandler implements KeyListener {
         if (codigo == KeyEvent.VK_DOWN  || codigo == KeyEvent.VK_S) abajo = false;
         if (codigo == KeyEvent.VK_LEFT  || codigo == KeyEvent.VK_A) izquierda = false;
         if (codigo == KeyEvent.VK_RIGHT || codigo == KeyEvent.VK_D) derecha = false;
+        //Cuando se suelta "x", posturaFirme false, y deja de estar así.
+        if (codigo == KeyEvent.VK_X) posturaFirme = false;
     }
+    
 }
